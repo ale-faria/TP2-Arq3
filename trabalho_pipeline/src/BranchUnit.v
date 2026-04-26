@@ -28,6 +28,14 @@ module BranchUnit (
         branch_target = pc_ex + 32'd4;
 
         //TODO: Implementar lógica do BEQ aqui!!!
-    end
 
+        // Implementação do BEQ
+        if (opcode == BEQ) begin
+            if (rs1_value == rs2_value) begin
+                branch_taken = 1'b1;
+                branch_target = pc_ex + branch_imm;
+            end
+        end
+    end
+    
 endmodule
