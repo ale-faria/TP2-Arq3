@@ -1,0 +1,42 @@
+VCD info: dumpfile wave.vcd opened for output.
+
+============================================
+Program      : full_dependencies
+Cycles       : 14
+Instructions : 7
+Stalls       : 0
+Bypasses     : 0
+Branches     : 1
+Flushes      : 1
+CPI          : 2.00
+============================================
+
+
+==============================
+CHECK EXPECTED RESULTS
+==============================
+FAIL: x2 expected 15, got 5
+FAIL: x3 expected 16, got 1
+FAIL: x4 expected 26, got 10
+FAIL: x7 expected 27, got 11
+FAIL: DMemory[1] expected 16, got 0
+FAIL: 5 error(s) found.
+==============================
+
+
+============================================
+STATE (non-zero values) for DEBUG
+============================================
+
+-- REGISTERS --
+x1 = 10 (0x0000000a)
+x2 = 5 (0x00000005)
+x3 = 1 (0x00000001)
+x4 = 10 (0x0000000a)
+x7 = 11 (0x0000000b)
+
+-- DATA MEMORY --
+mem[0] = 10 (0x0000000a)
+============================================
+
+tb/tb_RISCVCPU.v:30: $finish called at 165000 (1ps)
