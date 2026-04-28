@@ -26,6 +26,16 @@ module HazardDetectionUnit (
         // uses its destination register, the pipeline must stall one cycle.
 
         // TODO: Implementar a lógica para detectar hazard causado por load aqui!!!
+            if ((exmem_op == LW) &&
+            (exmem_rd != 5'd0) &&
+            (
+                ((idex_op == ALUop) && ((exmem_rd == idex_rs1) || (exmem_rd == idex_rs2))) ||
+                ((idex_op == SW)    && ((exmem_rd == idex_rs1) || (exmem_rd == idex_rs2))) ||
+                ((idex_op == BEQ)   && ((exmem_rd == idex_rs1) || (exmem_rd == idex_rs2))) ||
+                ((idex_op == LW)    && (exmem_rd == idex_rs1))
+            )) begin
+            stall = 1'b1;
+        end
 
     end
 

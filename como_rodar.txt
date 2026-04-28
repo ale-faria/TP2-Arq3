@@ -1,6 +1,9 @@
-no terminal: 
+- no terminal: 
 iverilog -o simv src/*.v tb/tb_RISCVCPU.v
 vvp simv
+- para ver o grafico do pipeline:
+gtkwave wave.vcd
+
 
 saida da primeira execução (projeto como o prof entregou):
 VCD info: dumpfile wave.vcd opened for output.
