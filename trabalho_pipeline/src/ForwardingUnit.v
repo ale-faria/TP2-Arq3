@@ -27,8 +27,6 @@ module ForwardingUnit (
     always @(*) begin
         forwardA = NO_FORWARD;
         forwardB = NO_FORWARD;
-
-        // TODO: implementar lógica do forwarding para operando A aqui!!!
     
         // Forwarding para operando A
         if ((exmem_rd != 5'd0) && (exmem_rd == idex_rs1)) begin
@@ -40,8 +38,6 @@ module ForwardingUnit (
             else
                 forwardA = FROM_WB_ALU;
         end
-
-        // TODO: implementar lógica do forwarding para operando B aqui!!!
         
         // Forwarding para operando B
         if ((exmem_rd != 5'd0) && (exmem_rd == idex_rs2)) begin
